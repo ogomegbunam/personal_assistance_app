@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:personal_assistance_app/auth/widgets/button.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:personal_assistance_app/screens/auth/login.dart';
+import 'package:personal_assistance_app/screens/auth/widgets/button.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-class Login extends StatelessWidget {
-  const Login({super.key});
+class Onboarding extends StatelessWidget {
+  const Onboarding({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class Login extends StatelessWidget {
                   ),
                    CircleAvatar(
                     backgroundColor:Color(0xFFDCECFF),
-                    radius: 90,
+                    radius:90,
                     child:  Image.asset(
                       'assets/icons/home.png',
                       height: 90,
@@ -69,7 +71,14 @@ class Login extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 6.h,),
-                Buttoncreate(title:"Get Started" ,onPressed: (){},)
+                Buttoncreate(title:"Get Started" ,onPressed: (){
+                  Navigator.push(
+                      context,
+                      PageTransition(
+                          type: PageTransitionType
+                              .leftToRightWithFade,
+                          child: const Login()));
+                },)
             ],) )
           ],
         ),

@@ -22,7 +22,7 @@ class Buttoncreate extends StatelessWidget {
       },
       child: Container(
         height: 12.w,
-        width: 90.w,
+
         alignment: Alignment.center,
         decoration: BoxDecoration(
           gradient: const LinearGradient(

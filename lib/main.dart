@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:personal_assistance_app/auth/login.dart';
+import 'package:personal_assistance_app/screens/auth/onboard.dart';
+
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const Login(),
+        home: const Onboarding(),
       );
     }
     );
