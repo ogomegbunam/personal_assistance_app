@@ -2,6 +2,7 @@ import 'package:email_validator/email_validator.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:personal_assistance_app/screens/auth/recover_password.dart';
 import 'package:personal_assistance_app/screens/auth/sing_up.dart';
 import 'package:personal_assistance_app/screens/auth/widgets/button.dart';
 import 'package:personal_assistance_app/screens/auth/widgets/inputdecoration.dart';
@@ -184,12 +185,22 @@ class _LoginState extends State<Login> {
                                   ),
                                 ],
                               ),
-                              const Text(
-                                "Forgot password",
-                                style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400,
-                                    color: Color(0xFF184CC8)),
+                              GestureDetector(
+                                onTap: (){
+                                  Navigator.push(
+                                      context,
+                                      PageTransition(
+                                          type: PageTransitionType
+                                              .leftToRightWithFade,
+                                          child:  RecoverPassword()));
+                                },
+                                child: const Text(
+                                  "Forgot password",
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400,
+                                      color: Color(0xFF184CC8)),
+                                ),
                               ),
                             ],
                           ),
