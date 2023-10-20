@@ -6,6 +6,7 @@ import 'package:personal_assistance_app/screens/auth/create_password.dart';
 import 'package:personal_assistance_app/screens/auth/sing_up.dart';
 import 'package:personal_assistance_app/screens/auth/widgets/button.dart';
 import 'package:personal_assistance_app/screens/auth/widgets/inputdecoration.dart';
+import 'package:personal_assistance_app/screens/password_code.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 class RecoverPassword extends StatelessWidget {
    RecoverPassword({super.key});
@@ -103,7 +104,7 @@ class RecoverPassword extends StatelessWidget {
                       PageTransition(
                           type: PageTransitionType
                               .leftToRightWithFade,
-                          child: const CreateNewPassword()));
+                          child: const Passcode()));
                 },
               ),
               SizedBox(height: 1.5.h,),
