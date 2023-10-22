@@ -1,6 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:personal_assistance_app/screens/auth/create_password.dart';
+import 'package:personal_assistance_app/screens/auth/recover_password.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -27,7 +29,7 @@ class _PasscodeState extends State<Passcode> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            height: 0.h,
+            height: 10.h,
           ),
           Container(
             height: 100,
@@ -159,6 +161,50 @@ class _PasscodeState extends State<Passcode> {
                       type: PageTransitionType.leftToRightWithFade,
                       child: const CreateNewPassword()));
             },
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(height: 30.h,),
+              Text.rich(
+                TextSpan(
+
+                  children: [
+                    TextSpan(
+                      text: "Did not receive the email? Check our Spam folder or ",
+
+                      style: TextStyle(
+                        color: Colors.black54,
+                        fontSize: 15.sp,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w500,
+                        letterSpacing: 0.18,
+                      ),
+                    ),
+                    TextSpan(
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                  type: PageTransitionType
+                                      .leftToRightWithFade,
+                                  child:  RecoverPassword()));
+                        },
+                      text: ' Try another email address',
+                      style: TextStyle(
+                        color: const Color(0xFF1B6DEE),
+                        fontSize: 16.sp,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w500,
+                        letterSpacing: 0.18,
+                      ),
+                    ),
+                  ],
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ],
           )
         ],
       ),
